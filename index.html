@@ -7,117 +7,115 @@
 
 <style>
 body {
-    margin: 0;
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  margin: 0;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* HEADER */
-.header {
-    padding: 60px 20px 20px;
+/* BACKGROUND ANIMÉ */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    0deg,
+    #111 0px,
+    #111 2px,
+    black 2px,
+    black 4px
+  );
+  animation: moveBg 10s linear infinite;
+  z-index: -1;
 }
 
+@keyframes moveBg {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* LOGO */
 .logo {
-    font-size: 42px;
-    letter-spacing: 6px;
-    color: #ff0033;
-    text-shadow: 0 0 15px #ff0033;
+  font-size: 48px;
+  margin-top: 80px;
+  color: #ff0033;
+  text-shadow: 0 0 10px #ff0033, 0 0 30px #ff0033;
+  animation: glitch 1s infinite;
 }
 
+/* GLITCH */
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* SLOGAN */
 .tagline {
-    font-size: 14px;
-    color: #888;
-    letter-spacing: 4px;
-    margin-top: 10px;
+  margin-top: 10px;
+  color: #aaa;
+  letter-spacing: 4px;
+  font-size: 14px;
 }
 
-/* LINE */
+/* LIGNE */
 .line {
-    width: 60px;
-    height: 2px;
-    background: #ff0033;
-    margin: 30px auto;
-}
-
-/* BUTTON */
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 15px 35px;
-    border: 2px solid #ff0033;
-    color: #ff0033;
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: #ff0033;
-    color: black;
+  width: 60px;
+  height: 2px;
+  background: #ff0033;
+  margin: 30px auto;
+  box-shadow: 0 0 10px #ff0033;
 }
 
 /* PLAYER */
 iframe {
-    margin-top: 40px;
-    width: 90%;
-    max-width: 500px;
-    height: 166px;
-    border: none;
+  margin-top: 30px;
+  width: 90%;
+  max-width: 500px;
+  height: 166px;
+  border: none;
 }
 
-/* SECTIONS */
-.section {
-    margin-top: 80px;
+/* BOUTON */
+.button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 15px 35px;
+  border: 2px solid #ff0033;
+  color: #ff0033;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: 0.3s;
 }
 
-.section h2 {
-    color: #ff0033;
-    letter-spacing: 3px;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 80px;
-    padding: 20px;
-    font-size: 11px;
-    color: #444;
-    letter-spacing: 3px;
+.button:hover {
+  background: #ff0033;
+  color: black;
+  box-shadow: 0 0 20px #ff0033;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="header">
-    <div class="logo">BNP FAMILY</div>
-    <div class="tagline">UNDERGROUND MUSIC COLLECTIVE</div>
-</div>
-
+<div class="logo">BNP FAMILY</div>
+<div class="tagline">BORN IN NOISE. BUILT FOR CHAOS.</div>
 <div class="line"></div>
 
-<a class="button" href="https://soundcloud.com/https://on.soundcloud.com/zREUi7BIJpJvuuwvvO" target="_blank">
-    LISTEN
-</a>
-
 <iframe 
-src="https://w.soundcloud.com/player/?url=https://soundcloud.com/https://on.soundcloud.com/zREUi7BIJpJvuuwvvO&color=%23ff0033&auto_play=false&hide_related=true&show_comments=false&show_user=false">
+src="https://w.soundcloud.com/player/?url=https://soundcloud.com/manu_bnp">
 </iframe>
 
-<div class="section">
-    <h2>IDENTITY</h2>
-    <p>RAW • DARK • INDUSTRIAL • FREE</p>
-</div>
-
-<div class="section">
-    <h2>SPIRIT</h2>
-    <p>NO RULES • NO LIMITS • JUST SOUND</p>
-</div>
-
-<div class="footer">
-    BNP FAMILY © UNDERGROUND MOVEMENT
-</div>
+<a href="https://soundcloud.com/manu_bnp" target="_blank" class="button">
+LISTEN NOW
+</a>
 
 </body>
 </html>
